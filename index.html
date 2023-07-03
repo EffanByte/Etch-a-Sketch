@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href="style.css">
+</head>
+<body>
+<div class = "header">
+    <button class = "change"> Change Grid Dimensions</button>
+</div>
+    <div class="container">
+        <script>
+                                    var a = 16
+                                    var b = 16
+            const container = document.querySelector(".container");
+            const button = document.querySelector(".change");  
+            function creategrid(a, b){
+                for (var rows = 1; rows <= a; rows++) {
+                    const row = document.createElement("div");
+                    row.classList.add("row");
+                for (var i = 1; i <= b; i++){
+                    var box = document.createElement("div");
+                    box.classList.add('box');
+                    box.style.minHeight = 100 / a + 'vh';
+                    box.style.minWidth = 100/ b + 'vw';
+                        box.addEventListener("mouseenter", setcolor) 
+                    row.appendChild(box);
+                }
+                container.appendChild(row);
+                }
+            }
+                                    button.addEventListener("click", removegrid)
+                        function setcolor(e) {
+                            e.target.style.backgroundColor = 'rgb(' + Math.random() * 255 + ', ' + Math.random() * 255 + ', ' + Math.random() * 255 + ')';
+                            
+                            }
+
+                        function removegrid() {
+                            a = window.prompt("Enter Grid Height")
+                            if (a > 100){
+                                a = 100;
+                            }
+                            b = window.prompt("Enter Grid Width")
+                            if (b > 100){
+                                b = 100;
+                            }
+                                while (container.lastChild) {
+                                    console.log(container.lastChild)
+                                    container.removeChild(container.lastChild)
+                                }
+                                
+                                creategrid(a, b);
+                            }
+            creategrid(a, b)
+        </script> </div>
+</body>
+</html>

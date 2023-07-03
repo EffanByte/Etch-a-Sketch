@@ -1,0 +1,27 @@
+
+* {
+    box-sizing: border-box;
+}
+body, html {
+margin: 0;
+padding: 0;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;;
+}
+
+.box {
+    border: 0.125px black solid;
+    min-height: 6vh;
+    min-width: 6vw;
+}
+
+.row{
+    display: flex;
+    min-width: 100%;
+}
+.container {
+    max-height: 90vh;
+    max-width: 100vw;
+}
